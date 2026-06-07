@@ -1,0 +1,17 @@
+bundle:
+  name: customer-load-bundle
+
+targets:
+  dev:
+    mode: development
+
+resources:
+  jobs:
+    customer_load_job:
+      name: Customer Load Job
+
+      tasks:
+        - task_key: load_customers
+
+          spark_python_task:
+            python_file: ./notebooks/customer_load.py
